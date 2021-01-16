@@ -99,6 +99,7 @@ img::-moz-selection {
   color: #343a40;
 }
 
+
 #mainNav .navbar-toggler {
   font-size: 12px;
   font-weight: 800;
@@ -143,7 +144,9 @@ img::-moz-selection {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  #mainNav.is-fixed {
+}
+
+ #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -67px;
@@ -167,7 +170,6 @@ img::-moz-selection {
     /* if the user changes the scrolling direction, we show the header */
     transform: translate3d(0, 100%, 0);
   }
-}
 
 header.masthead {
   margin-bottom: 50px;

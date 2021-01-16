@@ -1,0 +1,23 @@
+[
+    {
+        "image_source": "https://i2.wp.com/spicepaw.com/wp-content/uploads/2020/01/Aloo-Palak-1.jpg?fit=3124%2C3129&ssl=1",
+        "name": "ALOO PALAK",
+        "description": "A delicious, wholesome spinach & potato curry - perfect for a cold winter's day.",
+        "cookTime": "Cook time: 35 mins",
+        "numberOfServings": "Yield: 2 servings"
+    },
+    {
+        "image_source": "https://i1.wp.com/fatimacooks.net/wp-content/uploads/2015/09/11909846_1513755408915195_2052797190_n.jpg?resize=809%2C809&ssl=1",
+        "name": "CHICKEN KARAHI KEEMA",
+        "description": "Traditional karahi recipe of minced chicken in a ginger & tomato sauce.",
+        "cookTime": "Cook time: 35 mins",
+        "numberOfServings": "Yield: 3-4 servings"
+    },
+    {
+        "image_source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRIVdcOwbgkZQRw8Vimb8UwEBi5UCYWuO_kQ&usqp=CAU",
+        "name": "KEEMA NAAN",
+        "description": "Naan bread stuffed with minced meat. Best served fresh from the oven!",
+        "cookTime": "Cook time: 35 mins",
+        "numberOfServings": "Yield: 3-4 servings"
+    }
+]

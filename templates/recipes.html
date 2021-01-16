@@ -1,4 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>All Recipes Page</h1>
+
+    <h1>{{ page_title }}</h1>
+
+    <hr>
+
+    {% for recipe in recipes %}
+
+        <div class="row no-gutters text-center">
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ recipe.image_source }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.name }}</h5>
+                        <ul class="list-unstyled">
+                            <li><small>{{ recipe.cookTime }}</small></li>
+                            <li><small>{{ recipe.numberOfServings }}</small></li>
+                        </ul>
+                        <p class="card-text"> {{ recipe.description }}</p>
+                        <a href="#" class="btn btn-primary">See Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
 {% endblock %}

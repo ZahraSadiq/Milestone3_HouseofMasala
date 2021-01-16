@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, render_template
 
 
@@ -12,17 +13,20 @@ def index():
 
 @app.route("/addrecipe")
 def addrecipe():
-    return render_template("addrecipe.html")
+    return render_template("addrecipe.html", page_title="Add a Recipe")
 
 
 @app.route("/recipes")
 def recipes():
-    return render_template("recipes.html")
+    data = []
+    with open("data/recipes.json", "r") as json_data:
+        data= json.load(json_data)
+    return render_template("recipes.html", page_title="All Recipes", recipes=data)
 
 
 @app.route("/saved")
 def saved():
-    return render_template("saved.html")
+    return render_template("saved.html", page_title="Saved Recipes")
 
 
 if __name__ == "__main__":
