@@ -24,6 +24,19 @@ def recipes():
     return render_template("recipes.html", page_title="All Recipes", recipes=data)
 
 
+@app.route('/recipes/<recipe_name>')
+def recipes_method(recipe_name):
+    method = {}
+
+    with open("data/recipes.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == recipe_name:
+                method = obj
+
+    return render_template("method.html", method=method)
+
+
 @app.route("/saved")
 def saved():
     return render_template("saved.html", page_title="Saved Recipes")
