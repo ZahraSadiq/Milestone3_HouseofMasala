@@ -1,19 +1,49 @@
 import os
 import json
-from flask import Flask, render_template
+import env as config
+from flask import Flask, render_template, redirect, url_for, request, session
+from flask_pymongo import PyMongo
 
 
 app = Flask(__name__)
 
 
+os.environ[“MONGO_URI”] = "mongodb+srv://zahrasadiq:<CodingMS32021>@myfirstcluster.vcalk.mongodb.net/<dbname>?retryWrites=true&w=majority"
+app.secret_key = "my_secret_key"
+
+
+mongo = PyMongo(app)
+
+
 @app.route("/")
 def index():
+    if "username" in session:
+        return "You are logged in as " + session["username"]
+    
     return render_template("index.html")
 
 
-@app.route("/addrecipe")
-def addrecipe():
-    return render_template("addrecipe.html", page_title="Add a Recipe")
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    error = None
+    if request.method == "POST":
+        if request.form["username"] != "admin" or request.form["password"] != "admin":
+            error = "Invalid credentials, Please try again."
+        else:
+            session["loggin_in"] = True
+            return redirect(url_for("profile"))
+    return render_template("login.html", error=error)
+
+
+@app.route("/logout")
+def logout():
+    session.pop("logged_in", None)
+    return redirect(url_for("index"))
+
+
+@app.route("/profile")
+def profile():
+    return render_template("profile.html", page_title="Welcome User")
 
 
 @app.route("/recipes")
@@ -35,6 +65,11 @@ def recipes_method(recipe_name):
                 method = obj
 
     return render_template("method.html", method=method)
+
+
+@app.route("/addrecipe")
+def addrecipe():
+    return render_template("addrecipe.html", page_title="Add a Recipe")
 
 
 @app.route("/saved")
