@@ -1,38 +1,50 @@
 import os
 import json
-import env as config
 from flask import Flask, render_template, redirect, url_for, request, session
 from flask_pymongo import PyMongo
+import env
+import bcrypt
 
 
 app = Flask(__name__)
 
 
-os.environ[“MONGO_URI”] = "mongodb+srv://zahrasadiq:<CodingMS32021>@myfirstcluster.vcalk.mongodb.net/<dbname>?retryWrites=true&w=majority"
-app.secret_key = "my_secret_key"
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
 
 
 @app.route("/")
-def index():
+def index(): 
     if "username" in session:
         return "You are logged in as " + session["username"]
-    
+        return redirect(url_for("login"))
+
     return render_template("index.html")
 
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/login")
 def login():
-    error = None
+    return render_template("login.html")
+
+
+@app.route("/register", methods=["POST", "GET"])
+def register():
     if request.method == "POST":
-        if request.form["username"] != "admin" or request.form["password"] != "admin":
-            error = "Invalid credentials, Please try again."
-        else:
-            session["loggin_in"] = True
-            return redirect(url_for("profile"))
-    return render_template("login.html", error=error)
+        users = mongo.db.users
+        existing_user = users.find_one({"name": request.form["username"]})
+
+        if existing_user is None:
+            hashpass = bcrypt.hashpw(request.form["password"].encode("utf-8"), bcrypt.gensalt())
+            users.insert({"name": request.form["username"], "password": hashpass})
+            session["username"] = request.form["username"]
+            return redirect(url_for("login"))
+
+        return "That username already exists!"
+
+    return render_template("register.html")
 
 
 @app.route("/logout")
