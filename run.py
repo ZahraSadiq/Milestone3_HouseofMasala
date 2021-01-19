@@ -1,8 +1,10 @@
 import os
 import json
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import (
+    Flask, render_template, redirect, url_for, request, session, flash)
 from flask_pymongo import PyMongo
-import env 
+if os.path.exists("env.py"):
+    import env
 import bcrypt
 
 
@@ -17,11 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def index(): 
-    if "username" in session:
-        return "You are logged in as " + session["username"]
-        return redirect(url_for("profile"))
-
+def index():
     return render_template("index.html")
 
 
@@ -30,23 +28,9 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/register", methods=["POST", "GET"])
+@app.route("/register")
 def register():
-    error = None
-    if request.method == "POST":
-        users = mongo.db.users
-        existing_user = users.find_one({"name": request.form["username"]})
-
-        if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form["password"].encode("utf-8"), bcrypt.gensalt())
-            users.insert({"name": request.form["username"], "password": hashpass})
-            session["username"] = request.form["username"]
-            return redirect(url_for("login"))
-
-        else: 
-            error = "That username already exists!"
-
-    return render_template("register.html", error=error)
+    return render_template("register.html")
 
 
 @app.route("/logout")
@@ -64,7 +48,7 @@ def profile():
 def recipes():
     data = []
     with open("data/recipes.json", "r") as json_data:
-        data= json.load(json_data)
+        data = json.load(json_data)
     return render_template("recipes.html", page_title="All Recipes", recipes=data)
 
 
