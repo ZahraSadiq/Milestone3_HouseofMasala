@@ -1,24 +1,30 @@
-<html>
-  <head>
-    <title>HouseofMasala - login page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body>
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- Login Form -->
     <div class="container">
-      <h1>Please login</h1>
-      <br>
-      <form action="" method="post">
-        <input type="text" placeholder="Username" name="username" value="{{
-          request.form.username }}">
-         <input type="password" placeholder="Password" name="password" value="{{
+        <h1>Please login</h1>
+        <br>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="username">Email address</label>
+                <input type="email" class="form-control" id="username" aria-describedby="emailHelp"
+                    placeholder="Enter your email" name="username" value="{{
+                request.form.username }}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                    name="password" value="{{
           request.form.password }}">
-        <input class="btn btn-default" type="submit" value="Login">
-        <p>Dont have an account? <a class="nav-link" href="{{ url_for('register') }}">Register Now</a></p>
-      </form>
-      {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
-      {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Log In</button>
+            <p>Dont have an account? <a class="nav-link" href="{{ url_for('register') }}">Register Now</a></p>
+        </form>
+        {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+            {% endif %}
     </div>
-  </body>
-</html>
+
+
+{% endblock %}

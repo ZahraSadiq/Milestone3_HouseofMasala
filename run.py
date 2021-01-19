@@ -2,7 +2,7 @@ import os
 import json
 from flask import Flask, render_template, redirect, url_for, request, session
 from flask_pymongo import PyMongo
-import env
+import env 
 import bcrypt
 
 
@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 def index(): 
     if "username" in session:
         return "You are logged in as " + session["username"]
-        return redirect(url_for("login"))
+        return redirect(url_for("profile"))
 
     return render_template("index.html")
 
@@ -32,6 +32,7 @@ def login():
 
 @app.route("/register", methods=["POST", "GET"])
 def register():
+    error = None
     if request.method == "POST":
         users = mongo.db.users
         existing_user = users.find_one({"name": request.form["username"]})
@@ -42,9 +43,10 @@ def register():
             session["username"] = request.form["username"]
             return redirect(url_for("login"))
 
-        return "That username already exists!"
+        else: 
+            error = "That username already exists!"
 
-    return render_template("register.html")
+    return render_template("register.html", error=error)
 
 
 @app.route("/logout")

@@ -1,26 +1,35 @@
-<html>
+{% extends "base.html" %}
+{% block content %}
 
-<head>
-    <title>HouseofMasala - Register page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
-</head>
+<!-- Register Form -->
 
-<body>
-    <div class="container">
-        <h1>Create Your Profile</h1>
-        <br>
-        <form action="" method="post">
-            <input type="text" placeholder="Username" name="username" value="{{
-          request.form.username }}">
-            <input type="password" placeholder="Password" name="password" value="{{
+<div class="container">
+    <h1>Create Your Profile</h1>
+    <br>
+    <form action="" method="post">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="email" class="form-control" id="username" aria-describedby="emailHelp"
+                placeholder="Enter your email" name="username" value="{{
+                request.form.username }}">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                name="password" value="{{
           request.form.password }}">
-            <input class="btn btn-default" type="submit" value="Register">
-        </form>
-        {% if error %}
-        <p class="error"><strong>Error:</strong> {{ error }}
-            {% endif %}
-    </div>
-</body>
+        </div>
+        <button type="submit" value="Register" class="btn btn-primary">Register</button>
+    </form>
+    {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+</div>
 
-</html>
+{% endblock %}
