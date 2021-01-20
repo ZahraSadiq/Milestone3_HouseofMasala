@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" type="text/css"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    {% block styles %}
+    {% endblock %}
+    
     <title>House of Masala</title>
 </head>
 
@@ -130,11 +136,15 @@
 
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
 
     <!-- Copyright script -->
     <script>
         $("#copyright").text(new Date().getFullYear());
     </script>
+
+    {% block scripts %}
+    {% endblock %}
 
 </body>
 
