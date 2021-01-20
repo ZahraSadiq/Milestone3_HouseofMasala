@@ -45,12 +45,15 @@
                         <a class="nav-link" href="{{ url_for('addrecipe') }}">Add A Recipe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link d-block d-sm-none" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-block d-sm-none" href="{{ url_for('register') }}">Register</a>
                     </li>
                 </ul>
             </div>
             <div class="d-none d-lg-block">
-          <a href="{{ url_for('login') }}" class="btn btn-fire btn-login">Login</a>
+          <a href="{{ url_for('register') }}" class="btn btn-fire btn-register">Register</a>
         </div>
         </div>
     </nav>
