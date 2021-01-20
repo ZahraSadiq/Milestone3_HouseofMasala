@@ -5,6 +5,7 @@ from flask import (
     url_for, request, session, flash)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 import bcrypt
@@ -26,20 +27,14 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/test")
-def test():
-    test = mongo.db.recipes.find()
-    return render_template("test.html", recipes=test)
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 @app.route("/login")
 def login():
     return render_template("login.html")
-
-
-@app.route("/register")
-def register():
-    return render_template("register.html")
 
 
 @app.route("/logout")
@@ -82,6 +77,12 @@ def addrecipe():
 @app.route("/saved")
 def saved():
     return render_template("saved.html", page_title="Saved Recipes")
+
+
+@app.route("/test")
+def test():
+    test = mongo.db.recipes.find()
+    return render_template("test.html", recipes=test)
 
 
 if __name__ == "__main__":

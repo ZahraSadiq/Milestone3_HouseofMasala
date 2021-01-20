@@ -3,33 +3,38 @@
 
 <!-- Register Form -->
 
-<div class="container">
-    <h1>Create Your Profile</h1>
-    <br>
-    <form action="{{ url_for('register') }}" method="post">
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
-        </div>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="email" class="form-control" id="username" aria-describedby="emailHelp"
-                placeholder="Enter your email" name="username" value="{{
-                request.form.username }}">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                else.</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-                name="password" value="{{
-          request.form.password }}">
-        </div>
-        <button type="submit" value="Register" class="btn btn-primary">Register</button>
-    </form>
-    {% if error %}
-    <p class="error"><strong>Error:</strong> {{ error }}</p>
-    {% endif %}
-</div>
+    <div class="row">
+        <form class="col" method="POST" action="{{ url_for('register') }}">
+            <div class="card offset-m2">
+                <h5 class="card-header">Register</h5>
+                <div class="card-body">
+                    <!-- Username -->
+                    <div class="row">
+                        <div class="col mb-3">
+                            <i class="fas fa-user-plus"></i>
+                            <label for="username" class="form-label"> Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="row">
+                        <div class="col mb-3">
+                            <i class="fas fa-user-lock"></i>
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                    </div>
+                    <!-- Register -->
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" value="Register" class="btn btn-primary">
+                                Register <i class="fas fa-sign-in-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}
