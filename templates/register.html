@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- Register Form -->
+    <!-- Register Form -->
 
     <div class="row">
         <form class="col" method="POST" action="{{ url_for('register') }}">
@@ -10,20 +10,32 @@
                 <div class="card-body">
                     <!-- Username -->
                     <div class="row">
-                        <div class="col mb-3">
+                        <div class="col-12">
                             <i class="fas fa-user-plus"></i>
-                            <label for="username" class="form-label"> Username</label>
-                            <input type="text" class="form-control" id="username" name="username">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" minlength="5"
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        </div>
+                        <div class="col-12">
+                            <div class="col-12 text-muted">
+                            <span><small>Your username must be 5-15 characters long</small></span>
+                        </div>
                         </div>
                     </div>
+                    <br>
                     <!-- Password -->
                     <div class="row">
-                        <div class="col mb-3">
+                        <div class="col-12">
                             <i class="fas fa-user-lock"></i>
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <input type="password" class="form-control" id="password" name="password" minlength="5"
+                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        </div>
+                        <div class="col-12 text-muted">
+                            <span><small>Your password must be 5-15 characters long</small></span>
                         </div>
                     </div>
+                    <br>
                     <!-- Register -->
                     <div class="row">
                         <div class="col">
