@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>{{ page_title }}</h1>
+    <h1 class="text-center">{{ page_title }}</h1>
 
     <hr>
     {% for recipe in recipes %}
         <div class="row no-gutters text-center">
-            <div class="col-sm-4">
+            <div class="col-6 col-sm-12">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
                     <div class="card-body">

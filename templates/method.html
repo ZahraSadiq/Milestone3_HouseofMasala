@@ -11,6 +11,11 @@
                 <h2>{{ recipe.recipe_name.upper() }}</h2>
                 <h4> {{ recipe.recipe_description }}</h4>
                 <br>
+                <ul class="list-unstyled">
+                    <li><small><i class="fas fa-clock"></i><strong> Preparation Time: </strong>{{ recipe.recipe_preptime }}</small></li>
+                    <li><small><i class="fas fa-drumstick-bite"></i><strong> Yield: </strong> {{ recipe.recipe_servings }}</small></li>
+                </ul>
+                <br>
                 <h3>Ingredients:</h3>
                     <ul>
                         <li>{{ recipe.recipe_ingredients }}</li>
@@ -23,7 +28,9 @@
                 <h3>Method:</h3>
                     <ol>
                         <li>{{ recipe.recipe_step1 }}</li>
+                        <br>
                         <li>{{ recipe.recipe_step2 }}</li>
+                        <br>
                         <li>{{ recipe.recipe_step3 }}</li>
                     </ol>
                 </div>
