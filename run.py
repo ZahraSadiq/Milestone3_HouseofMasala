@@ -102,10 +102,9 @@ def logout():
 
 @app.route("/recipes")
 def recipes():
-    data = []
-    with open("data/recipes.json", "r") as json_data:
-        data = json.load(json_data)
-    return render_template("recipes.html", page_title="All Recipes", recipes=data)
+    recipe = mongo.db.recipes.find()
+    return render_template(
+        "recipes.html", page_title="All Recipes", recipes=recipe)
 
 
 @app.route('/recipes/<recipe_name>')
@@ -121,14 +120,40 @@ def recipes_method(recipe_name):
     return render_template("method.html", method=method)
 
 
-@app.route("/addrecipe")
+# Recipe CRUD Funtionality
+# Add/Create a new recipe
+@app.route("/addrecipe", methods=["GET", "POST"])
 def addrecipe():
+    if request.method == "POST":
+        # Key value pairs 
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_image": request.form.get("recipe_image"),
+            "recipe_description": request.form.get("recipe_description"),
+            "recipe_preptime": request.form.get("recipe_preptime"),
+            "recipe_servings": request.form.get("recipe_servings"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_step1": request.form.get("recipe_step1"),
+            "recipe_step2": request.form.get("recipe_step2"),
+            "recipe_step3": request.form.get("recipe_step3"),
+            "created_by": session["user"],
+            "recipe_url": request.form.get("recipe_name")
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("recipes"))
     return render_template("addrecipe.html", page_title="Add a Recipe")
 
 
 @app.route("/saved")
 def saved():
     return render_template("saved.html", page_title="Saved Recipes")
+
+
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("method.html", recipe=recipe)
 
 
 @app.route("/test")
