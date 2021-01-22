@@ -9,7 +9,6 @@
     integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
     crossorigin="anonymous" type="text/css"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -65,22 +64,7 @@
     </nav>
 
 
-    <!-- Page Header -->
-    <header class="masthead"
-        style="background-image: url('https://www.foodies.pk/wp-content/uploads/2019/09/Pakistani-Cuisine-Food.jpg')">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="site-heading">
-                        <h1>House of Masala Recipe Book</h1>
-                        <span class="subheading">Providing you with the most delicious Pakistani recipes to try at home.
-                            Here you can save your favorite recipes or upload your own to share with others.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+   
 
     <section>
         <!-- Flash Messages -->
@@ -101,7 +85,7 @@
     
     
     <!-- Main Content -->
-    <div class="container">
+    <div>
 
         {% block content %}
         {% endblock %}

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="text-center">{{ page_title }}</h1>
+
+    <div class="row card bg-light mx-auto">
+        <form class="col-12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <!-- Recipe Name -->
+            <div class="row my-3">
+                <div class="col-6">
+                    <i class="fas fa-edit"></i>
+                    <label for="recipe_name" class="form-label">Recipe Name</label>
+                    <input type="text" class="form-control" id="recipe_name" name="recipe_name"
+                    minlength="5" maxlength="50" required>
+                </div>
+            <!-- Recipe Image URL -->
+                <div class="col-6">
+                    <i class="fas fa-file-image"></i>
+                    <label for="recipe_image" class="form-label">Image URL</label>
+                    <input type="url" class="form-control" id="recipe_image" name="recipe_image"
+                    required>
+                </div>
+            </div>
+            <!-- Recipe Description -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-align-left"></i>
+                    <label for="recipe_decription">Recipe Description</label>
+                    <textarea class="form-control" id="recipe_decription" name="recipe_description"
+                    rows="3" minlength="5" maxlength="250" required></textarea>
+                </div>
+            </div>
+            <!-- Preparation Time -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-clock"></i>
+                    <label for="recipe_preptime" class="form-label">Preparation Time</label>
+                    <input type="text" class="form-control" id="recipe_preptime" name="recipe_preptime"
+                    minlength="5" maxlength="50" required>
+                </div>
+            </div>
+            <!-- Recipe Yield -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <label for="recipe_servings" class="form-label">Number of Servings</label>
+                    <input type="text" class="form-control" id="recipe_servings" name="recipe_servings"
+                    minlength="1" maxlength="50" required>
+                </div>
+            </div>
+            <!-- Ingredients List -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-list-ul"></i>
+                    <label for="recipe_ingredients" class="form-label">Ingredients</label>
+                    <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients"
+                    minlength="5" required>
+                </div>
+            </div>
+            <!-- Method - Step 1 -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <label for="recipe_step1" class="form-label">Step 1</label>
+                    <input type="text" class="form-control" id="recipe_step1" name="recipe_step1"
+                    minlength="5" required>
+                </div>
+            </div>
+            <!-- Method - Step 2 -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <label for="recipe_step2" class="form-label">Step 2</label>
+                    <input type="text" class="form-control" id="recipe_step2" name="recipe_step2"
+                    minlength="5" required>
+                </div>
+            </div>
+            <!-- Method - Step 3 -->
+            <div class="row my-3">
+                <div class="col">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <label for="recipe_step3" class="form-label">Step 2</label>
+                    <input type="text" class="form-control" id="recipe_step3" name="recipe_step3"
+                    minlength="5" >
+                </div>
+            </div>
+            <!-- Submit Recipe button -->
+            <div class="row">
+                <div class="col-3 mx-auto mb-4">
+                    <button type="submit" class="btn btn-add-recipe">
+                        Recipe<i class="fas fa-edit"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    
+{% endblock %}

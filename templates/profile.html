@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <!-- Register Form -->
+    <!-- Start of User Profile -->
     <div class="row">
         <div class="col">
             <div class="card offset-m2">
@@ -14,37 +14,38 @@
             </div>
         </div>
     </div>
-        <div id="accordion">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            Recipe Name 
-                        </button>
-                    </h5>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p>Recipe Name: </p>
-                            </div>
-                            <div class="col-12">
-                                <p>Description: </p>
-                            </div>
+    <!-- Accordion to display user's recipes -->
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        Recipe Name
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Recipe Name: </p>
                         </div>
-                       <div class="row">
-                           <div class="col-6 my-2 mx-auto">
-                               <a href="" class="btn btn-primary">Edit</a>
-                           </div>
-                           <div class="col-6 my-2 mx-auto">
-                               <a href="" class="btn btn-primary">Delete</a>
-                           </div>
-                       </div>
+                        <div class="col-12">
+                            <p>Description: </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 my-2 mx-auto">
+                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-primary">Edit</a>
+                        </div>
+                        <div class="col-6 my-2 mx-auto">
+                            <a href="" class="btn btn-primary">Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 {% endblock %}

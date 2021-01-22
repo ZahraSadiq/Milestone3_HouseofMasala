@@ -21,3 +21,7 @@
 .btn:hover {
   opacity: 1;
 }
+
+.body-wrapper {
+    margin-top: 5rem;
+}

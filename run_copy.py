@@ -150,8 +150,7 @@ def edit_recipe(recipe_id):
 @app.route("/test")
 def test():
     test = mongo.db.recipes.find()
-    return render_template(
-        "test.html", page_title="Edit Recipe", recipes=test)
+    return render_template("test.html", recipes=test)
 
 
 if __name__ == "__main__":
