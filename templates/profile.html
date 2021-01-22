@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container body-wrapper">
     <!-- Start of User Profile -->
     <div class="row">
         <div class="col">
@@ -14,38 +15,26 @@
             </div>
         </div>
     </div>
-    <!-- Accordion to display user's recipes -->
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne">
-                        Recipe Name
-                    </button>
-                </h5>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <p>Recipe Name: </p>
-                        </div>
-                        <div class="col-12">
-                            <p>Description: </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6 my-2 mx-auto">
-                            <a href="" class="btn btn-primary">Edit</a>
-                        </div>
-                        <div class="col-6 my-2 mx-auto">
-                            <a href="" class="btn btn-primary">Delete</a>
-                        </div>
+    <!-- Card to display user's recipes -->
+    <div class="row no-gutters text-center">
+        {% for recipe in recipes %}
+            <div class="col-6 col-sm-12 col-lg-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipe.recipe_name.upper() }}</h5>
+                        <ul class="list-unstyled">
+                            <li><small><strong>Preptime: </strong>{{ recipe.recipe_preptime }}</small></li>
+                            <li><small><strong>Yield: </strong> {{ recipe.recipe_servings }}</small></li>
+                        </ul>
+                        <p class="card-text"> {{ recipe.recipe_description }}</p>
+                        <p><em>Created by: {{ recipe.created_by }}</em></p>
+                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn btn-primary">See Recipe</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

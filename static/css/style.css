@@ -22,6 +22,14 @@
   opacity: 1;
 }
 
+/* Wrap body content */
 .body-wrapper {
     margin-top: 5rem;
+}
+
+/* Recipe cards */
+.card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
 }

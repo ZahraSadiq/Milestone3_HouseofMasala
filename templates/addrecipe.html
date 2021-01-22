@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+<div class="container body-wrapper">
     <h1 class="text-center">{{ page_title }}</h1>
 
     <div class="row card bg-light mx-auto">
@@ -85,12 +87,14 @@
             </div>
             <!-- Submit Recipe button -->
             <div class="row">
-                <div class="col-3 mx-auto mb-4">
-                    <button type="submit" class="btn btn-add-recipe">Add Recipe</button>
+                <div class="col mx-auto mb-4">
+                    <button type="submit" class="btn">
+                        Add Recipe <i class="fas fa-sign-in-alt"></i>
+                    </button>
                 </div>
             </div>
         </form>
     </div>
-
+</div>
     
 {% endblock %}
