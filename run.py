@@ -27,6 +27,7 @@ def index():
     return render_template("index.html")
 
 
+# Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -52,6 +53,7 @@ def register():
     return render_template("register.html")
 
 
+# Login
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
@@ -80,6 +82,7 @@ def login():
     return render_template("login.html")
 
 
+# Profile
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's username from db
@@ -94,14 +97,16 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+# Logout
 @app.route("/logout")
 def logout():
     # remove user from session cookies
     flash("You've been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-    
 
+
+# All Recipes
 @app.route("/recipes")
 def recipes():
     recipe = mongo.db.recipes.find()
@@ -134,14 +139,14 @@ def addrecipe():
     return render_template("addrecipe.html", page_title="Add A Recipe")
 
 
-# individual recipe page
+# Individual recipe page
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("method.html", recipe=recipe)
 
 
-# edit recipe
+# Edit recipe
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     # retrieve recipe from db to edit
