@@ -33,3 +33,40 @@
     height: 25vw;
     object-fit: cover;
 }
+
+/* Footer */
+footer {
+  padding: 15px 0 10px;
+  background-color: black;
+  color: white;
+}
+
+footer .list-inline {
+  margin: 0;
+  padding: 0;
+}
+
+footer .copyright {
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.general-sub {
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.footer-body {
+    font-size: 14px;
+}
+
+.footer-icons {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-top: 25px;
+}
+
+.footer-links {
+    color: #4CAF50;
+}
