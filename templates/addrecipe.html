@@ -3,21 +3,22 @@
 
 <div class="container body-wrapper">
     <h1 class="text-center">{{ page_title }}</h1>
+    <br>
 
-    <div class="row card bg-light mx-auto">
+    <div class="row card bg-light mx-auto mb-3">
         <form class="col-12" method="POST" action="{{ url_for('addrecipe') }}">
             <!-- Recipe Name -->
             <div class="row my-3">
                 <div class="col-6">
-                    <i class="fas fa-edit"></i>
-                    <label for="recipe_name" class="form-label">Recipe Name</label>
+                    <i class="fas fa-edit form-icon"></i>
+                    <label for="recipe_name" class="form-label"><strong>Recipe Name</strong></label>
                     <input type="text" class="form-control" id="recipe_name" name="recipe_name"
                     minlength="5" maxlength="50" required>
                 </div>
             <!-- Recipe Image URL -->
                 <div class="col-6">
-                    <i class="fas fa-file-image"></i>
-                    <label for="recipe_image" class="form-label">Image URL</label>
+                    <i class="fas fa-file-image form-icon"></i>
+                    <label for="recipe_image" class="form-label"><strong>Image URL</strong></label>
                     <input type="url" class="form-control" id="recipe_image" name="recipe_image"
                     required>
                 </div>
@@ -25,26 +26,24 @@
             <!-- Recipe Description -->
             <div class="row my-3">
                 <div class="col">
-                    <i class="fas fa-align-left"></i>
-                    <label for="recipe_decription">Recipe Description</label>
+                    <i class="fas fa-align-left form-icon"></i>
+                    <label for="recipe_decription"><strong>Recipe Description</strong></label>
                     <textarea class="form-control" id="recipe_decription" name="recipe_description"
-                    rows="3" minlength="5" maxlength="250" required></textarea>
+                    rows="2" minlength="5" maxlength="250" required></textarea>
                 </div>
             </div>
             <!-- Preparation Time -->
             <div class="row my-3">
-                <div class="col">
-                    <i class="fas fa-clock"></i>
-                    <label for="recipe_preptime" class="form-label">Preparation Time</label>
+                <div class="col-6">
+                    <i class="fas fa-clock form-icon"></i>
+                    <label for="recipe_preptime" class="form-label"><strong>Preparation Time</strong></label>
                     <input type="text" class="form-control" id="recipe_preptime" name="recipe_preptime"
                     minlength="5" maxlength="50" required>
                 </div>
-            </div>
             <!-- Recipe Yield -->
-            <div class="row my-3">
-                <div class="col">
-                    <i class="fas fa-drumstick-bite"></i>
-                    <label for="recipe_servings" class="form-label">Number of Servings</label>
+                <div class="col-6">
+                    <i class="fas fa-drumstick-bite form-icon"></i>
+                    <label for="recipe_servings" class="form-label"><strong>Number of Servings</strong></label>
                     <input type="text" class="form-control" id="recipe_servings" name="recipe_servings"
                     minlength="1" maxlength="50" required>
                 </div>
@@ -52,17 +51,17 @@
             <!-- Ingredients List -->
             <div class="row my-3">
                 <div class="col">
-                    <i class="fas fa-list-ul"></i>
-                    <label for="recipe_ingredients" class="form-label">Ingredients</label>
-                    <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients"
-                    minlength="5" required>
+                    <i class="fas fa-list-ul form-icon"></i>
+                    <label for="recipe_ingredients" class="form-label"><strong>Ingredients</strong></label>
+                    <textarea type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients"
+                    minlength="5" required></textarea>
                 </div>
             </div>
             <!-- Method - Step 1 -->
             <div class="row my-3">
                 <div class="col">
-                    <i class="fas fa-mortar-pestle"></i>
-                    <label for="recipe_step1" class="form-label">Step 1</label>
+                    <i class="fas fa-mortar-pestle form-icon"></i>
+                    <label for="recipe_step1" class="form-label"><strong>Step 1</strong></label>
                     <input type="text" class="form-control" id="recipe_step1" name="recipe_step1"
                     minlength="5" required>
                 </div>
@@ -70,8 +69,8 @@
             <!-- Method - Step 2 -->
             <div class="row my-3">
                 <div class="col">
-                    <i class="fas fa-mortar-pestle"></i>
-                    <label for="recipe_step2" class="form-label">Step 2</label>
+                    <i class="fas fa-mortar-pestle form-icon"></i>
+                    <label for="recipe_step2" class="form-label"><strong>Step 2</strong></label>
                     <input type="text" class="form-control" id="recipe_step2" name="recipe_step2"
                     minlength="5" required>
                 </div>
@@ -79,8 +78,8 @@
             <!-- Method - Step 3 -->
             <div class="row my-3">
                 <div class="col">
-                    <i class="fas fa-mortar-pestle"></i>
-                    <label for="recipe_step3" class="form-label">Step 2</label>
+                    <i class="fas fa-mortar-pestle form-icon"></i>
+                    <label for="recipe_step3" class="form-label"><strong>Step 3</strong></label>
                     <input type="text" class="form-control" id="recipe_step3" name="recipe_step3"
                     minlength="5" >
                 </div>
