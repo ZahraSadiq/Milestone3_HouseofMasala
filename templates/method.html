@@ -3,37 +3,36 @@
 
     <div class="container body-wrapper">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5 mb-2">
                 <img src="{{ recipe.recipe_image }}" alt="Aloo Palak dish">
                 <br>
             </div>
             <div class="col-md-7">
-                <h2>{{ recipe.recipe_name.upper() }}</h2>
-                <h4> {{ recipe.recipe_description }}</h4>
+                <h2 class="page-headers">{{ recipe.recipe_name.upper() }}</h2>
+                <h5> {{ recipe.recipe_description }}</h5>
                 <br>
                 <ul class="list-unstyled">
-                    <li><small><i class="fas fa-clock"></i><strong> Preparation Time: </strong>{{ recipe.recipe_preptime }}</small></li>
-                    <li><small><i class="fas fa-drumstick-bite"></i><strong> Yield: </strong> {{ recipe.recipe_servings }}</small></li>
+                    <li><small><i class="fas fa-clock form-icon"></i><strong> Preparation Time: </strong>{{ recipe.recipe_preptime }}</small></li>
+                    <li><small><i class="fas fa-drumstick-bite form-icon"></i><strong> Yield: </strong> {{ recipe.recipe_servings }}</small></li>
                 </ul>
                 <br>
-                <h3>Ingredients:</h3>
+                <h3 class="page-headers">Ingredients:</h3>
                     <ul>
                         <li>{{ recipe.recipe_ingredients }}</li>
                     </ul>
-                <br>
             </div>
         </div>
-            <div class="row my-5">
+        <div class="row my-4">
             <div class="col-md-12">
-                <h3>Method:</h3>
-                    <ol>
-                        <li>{{ recipe.recipe_step1 }}</li>
-                        <br>
-                        <li>{{ recipe.recipe_step2 }}</li>
-                        <br>
-                        <li>{{ recipe.recipe_step3 }}</li>
-                    </ol>
-                </div>
+                <h3 class="page-headers">Method:</h3>
+                <ol>
+                    <li>{{ recipe.recipe_step1 }}</li>
+                    <br>
+                    <li>{{ recipe.recipe_step2 }}</li>
+                    <br>
+                    <li>{{ recipe.recipe_step3 }}</li>
+                </ol>
+            </div>
         </div>
     </div>
 
