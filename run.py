@@ -1,5 +1,4 @@
 import os
-import json
 from flask import (
     Flask, render_template, redirect,
     url_for, request, session, flash)
@@ -167,17 +166,20 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Successfully Updated")
+        return redirect(url_for("recipes"))
 
     # retrieve recipe from db to edit
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("edit_recipe.html", recipe=recipe)
 
 
-@app.route("/test")
-def test():
-    test = mongo.db.recipes.find()
-    return render_template(
-        "test.html", page_title="Edit Recipe", recipes=test)
+# Delete recipe
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    # Remove recipe from db
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("recipes"))
 
 
 if __name__ == "__main__":
