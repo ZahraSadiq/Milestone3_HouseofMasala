@@ -21,6 +21,14 @@
   opacity: 1;
 }
 
+.btn .btn-edit {
+    background-color: lightgreen;
+}
+
+.btn .btn-delete {
+    background-color: lightsalmon;
+}
+
 /* Wrap body content */
 .body-wrapper {
     margin-top: 5rem;
@@ -80,6 +88,14 @@ footer .copyright {
     margin-top: 25px;
 }
 
+.footer-icons:hover {
+    color: yellowgreen;
+}
+
 .footer-links {
     color: #4CAF50;
+}
+
+.footer-links:hover {
+    color: yellowgreen;
 }

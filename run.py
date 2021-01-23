@@ -151,7 +151,7 @@ def recipe(recipe_id):
 def edit_recipe(recipe_id):
     # retrieve recipe from db to edit
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("edit_recipe", recipe=recipe)
+    return render_template("edit_recipe.html", recipe=recipe)
 
 
 @app.route("/test")
