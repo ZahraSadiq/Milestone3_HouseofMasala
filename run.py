@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    recipe = mongo.db.recipes.find().sort("<recipe_id>", 1).limit(3)
+    # Retrieve last 3 recipes from db
+    recipe = mongo.db.recipes.find().sort("<recipe_id>", -1).limit(3)
     return render_template(
         "index.html", page_title="Recently Added Recipes", recipes=recipe)
 
@@ -110,6 +111,7 @@ def logout():
 # All Recipes
 @app.route("/recipes")
 def recipes():
+    # Retrieve all recipes from db
     recipe = mongo.db.recipes.find()
     return render_template(
         "recipes.html", page_title="All Recipes", recipes=recipe)
@@ -120,7 +122,7 @@ def recipes():
 @app.route("/addrecipe", methods=["GET", "POST"])
 def addrecipe():
     if request.method == "POST":
-        # Key value pairs 
+        # Key value pairs
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_image": request.form.get("recipe_image"),
@@ -143,6 +145,7 @@ def addrecipe():
 # Individual recipe page
 @app.route("/recipe/<recipe_id>")
 def recipe(recipe_id):
+    # Display unique recipe page
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template("method.html", recipe=recipe)
 
@@ -152,7 +155,7 @@ def recipe(recipe_id):
 def edit_recipe(recipe_id):
     # update the form with new values
     if request.method == "POST":
-        # Key value pairs 
+        # Key value pairs
         submit = {
             "recipe_name": request.form.get("recipe_name"),
             "recipe_image": request.form.get("recipe_image"),
