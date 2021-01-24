@@ -2,6 +2,10 @@
     line-height: 2;
 }
 
+.flash-wrapper {
+    margin-top: 4rem;
+}
+
 .page-headers {
     color: #29580a;
 }
@@ -58,7 +62,7 @@
 
 /* Wrap body content */
 .body-wrapper {
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 /* Recipe cards */
