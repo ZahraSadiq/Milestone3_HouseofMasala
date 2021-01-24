@@ -30,12 +30,12 @@ h6 {
 }
 
 a {
-  color: #212529;
+  color: #4CAF50;
   transition: all 0.2s;
 }
 
 a:focus, a:hover {
-  color: #4CAF50;
+  color: #212529;
 }
 
 .section-heading {
@@ -219,30 +219,4 @@ header.masthead .site-heading .subheading {
   header.masthead .site-heading h1 {
     font-size: 80px;
   }
-}
-
-.btn {
-  font-size: 14px;
-  font-weight: 800;
-  padding: 15px 25px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-radius: 0;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.btn-primary {
-  background-color: #0085A1;
-  border-color: #0085A1;
-}
-
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  color: #fff;
-  background-color: #00657b !important;
-  border-color: #00657b !important;
-}
-
-.btn-lg {
-  font-size: 16px;
-  padding: 25px 35px;
 }

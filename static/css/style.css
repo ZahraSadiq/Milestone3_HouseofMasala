@@ -6,28 +6,45 @@
     color: #29580a;
 }
 
-/* Set a style for the submit button */
+/* Recipes buttons */
 .btn {
-  background-color: #4CAF50;
-  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0.5;
   padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+  color: white;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.btn:hover {
+.btn-recipes {
+  background-color: #4CAF50;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.btn-recipes:hover {
   opacity: 1;
 }
 
-.btn .btn-edit {
-    background-color: lightgreen;
+.btn-edit {
+    background-color: #e68e3c;
+    width: 98%;
 }
 
-.btn .btn-delete {
-    background-color: lightsalmon;
+.btn-delete {
+    background-color: #cf5a48;
+    width: 98%;
 }
+
+.btn-cancel {
+    background-color: #4CAF50;
+    width: 98%;
+}
+
 
 /* Wrap body content */
 .body-wrapper {

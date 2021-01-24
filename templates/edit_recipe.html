@@ -89,13 +89,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col mx-auto mb-4">
+                <div class="col-lg-6 col-md-6 col-sm-12 mx-auto mb-4">
                     <!-- Cancel Edit button -->
-                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn">
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-cancel">
                         Cancel <div class="i fas fa-times-circle right"></div>
                     </a>
-                    <button type="submit" class="btn">
-                        Edit Recipe <i class="fas fa-edit"></i>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 mx-auto mb-4">
+                    <!-- Save Changes button -->
+                    <button type="submit" class="btn btn-edit">
+                        Save Changes <i class="fas fa-edit"></i>
                     </button>
                 </div>
             </div>
