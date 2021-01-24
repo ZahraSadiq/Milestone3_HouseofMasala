@@ -112,7 +112,7 @@ def logout():
 @app.route("/recipes")
 def recipes():
     # Retrieve all recipes from db
-    recipe = mongo.db.recipes.find()
+    recipe = mongo.db.recipes.find().sort("_id", -1)
     return render_template(
         "recipes.html", page_title="All Recipes", recipes=recipe)
 
