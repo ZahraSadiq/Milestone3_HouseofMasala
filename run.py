@@ -24,7 +24,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     # Retrieve last 3 recipes from db
-    recipe = mongo.db.recipes.find().sort("<recipe_id>", -1).limit(3)
+    recipe = mongo.db.recipes.find().sort("_id", -1).limit(3)
     return render_template(
         "index.html", page_title="Recently Added Recipes", recipes=recipe)
 
