@@ -50,18 +50,20 @@ This website can be used by Pakistanis and non-Pakistanis interested in learning
 * As a Frequent Visitor, I want to check to see if there are any newly added recipes that have been created on the website that I can cook. 
 * As a Frequent Visitor, I want to be able to log in & log out of my profile with ease. 
 
-### Design: 
+### Design:
 
-* Color Scheme: 
-    * The three main colors used are Black, Pink & Beige.
+I opted for a clean and fresh look & feel for this website. The background is kept white to allow for the imagery of the food to stand out, while the bright green buttons add a nice pop of color to break up the whitespace without being too distracting for the user. 
+
+* Color Scheme:
+   * The main colors used are 2 shades of Green, Dark Grey, and White. 
 
 * Typography:
-    * All Headers use Karla. Karla is a sans-serif font with nice letter-spacing - which makes it easy-to-read & clean.
-    * Montserrat is my secondary font, used for paragraphs. Like Karla, it is both clean & easy to read especially on smaller devices & pairs nicely with Karla. 
-    * Sans-Serif is used as the backup font for both Karla & Montserrat.
+   * All Headers use Open Sans & Helvetica Neue. These are both sans-serif font with nice letter-spacing - which makes it easy-to-read & clean.
+   * Arial is my secondary font, used for paragraphs. It has a lighter font-weight, which pairs nicely with other sans-serif fonts and is easy to read on smaller devices.
+   * Sans-Serif is used as the backup font for both Open Sans, Helvetica Neue & Arial.
 
-* Imagery: 
-    * A bright, colorful image was used for the hero image to be eye-catching to the user. It also compliments the color scheme, adding an element of consistency to the website. 
+* Imagery:
+   * A bright, colorful image showing popular Pakistani dishes is used for the hero image to be eye-catching & inviting to the user. In general, Pakistani food consists of different shades of brown, yellows, reds and greens and I wanted the user to get a sense of this right off the bat. Images for the recipes are also bright & vibrant, allowing the food to speak for itself.
 
 ### Wireframes & Mockups:
 
@@ -77,11 +79,17 @@ The site contains certain features which are not visible or available to unregis
 
 ### Features visible to All Users:
 * **All Recipes:** 
+    * * The All Recipes page contains an assortment of recipes added by House of Masala, as well as the users of the website. Each recipe card displays an image of the dish, the name, short description prep time, yield, and a CTA button to view the recipe. The creator of the recipe is also visible. 
 * **Register**
+	* The register feature is one visible to all users as a link on the navigation bar. Once clicked, it leads to a form where users can create a unique username and password. If the username is already taken, a message saying “Username already exists” will flash at the top of the page. Once the user has registered successfully, they will be redirected to the homepage. A success message also flashes at the top of the page signalling a successful registration.
 * **Login** 
+    * The login feature is also visible to all users and can be found in the navigation bar. It enables users who already have a profile to login with their credentials. If the credentials don't match those entered during registration, an error message “Incorrect Username and/or Password” will flash across the screen. For users who have not registered yet, a CTA link at the bottom of the form directs them to register. Alternatively, if the login is successful and the username & password match those stored in the database, a welcome message will flash & the user will be redirected to the profile page. 
 * **Recently Added Recipes**
-* **Footer** Contact link for email, social links 
+	* The three most recently added recipes are also visible to all users on the homepage. This section retrieves the newest recipes from the database in descending order. A CTA link at the bottom of the section leads users to the All Recipes page to view all the recipes.
+* **Footer**
+    * Located at the bottom of each page of the website, the footer consists of a contact us section with an email address, a short about section, and social media links leading to Pakistani food accounts intended to give users more food inspiration & recipe choices.
 * **Navbar**
+	* The navigation bar at the top of each page of the website enables the user to easily access all pages of the website. On smaller devices, the navbar transforms into a burger menu, where links are only visible in a dropdown menu. There are two different views of the navigation bar - one view to all users, and the other to those users who are logged in to the website. 
 
 ### Features visible to Logged In/Registered Users:
 * **Profile** 
@@ -106,22 +114,22 @@ The site contains certain features which are not visible or available to unregis
 This User Centric Frontend Project focused on the use of the following languages:
 * HTML5 - for website structure 
 * CSS3 - for styling 
-* JavaScript - 
-* Python including:
+* JavaScript - for running interactive features 
+* Python for automating tasks & scripting, including:
     * Flask 
     * Flask pymongo
     * Jinja templating
     * BSON
     * Werkzeug
     * Dnspython
-* MongoDB
 
 ### 2. Other Programs & Frameworks Used 
 
-* Webformatter - to beautify my CSS, HTML, JS code 
 * FontAwesome - for all icons used on the buttons
 * Balsamiq - for creating wireframes 
 * Bootstrap 4.4.1 - for assisting in responsiveness and layout of website 
+* Startup Bootstrap - for website theme 
+* MongoDB - database for storing user info & recipes 
 
 ### 3. IDE's 
 
