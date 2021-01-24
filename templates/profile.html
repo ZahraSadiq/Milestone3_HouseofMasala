@@ -5,45 +5,49 @@
     <!-- Start of User Profile -->
     <div class="row">
         <div class="col">
-            <div class="card offset-m2">
+            <div class="card offset-m2 mb-4">
                 <h4 class="card-header text-center page-headers">
-                    {{ username }}'s Profile
+                    {{ username }}'s Recipes
                 </h4>
                 <div class="card-body">
-                    <h5>My Recipes:</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <!-- Card to display user's recipes -->
-    <div class="row no-gutters text-center">
-        {% for recipe in recipes %}
-            {% if session.user|lower == recipe.created_by|lower %}
-            <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 mx-2 mb-2">
-                    <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name.upper() }}</a></h5>
-                        <p class="card-text"> {{ recipe.recipe_description }}</p>
-                        <p><em>Created by: {{ recipe.created_by }}</em></p>
-                    </div>   
-                    <div class="row">
-                        <!-- Edit Recipe button -->
-                        <div class="col-lg-6 col-md-6 mb-2 mx-auto">
-                            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn btn-edit">
-                                Edit <i class="fas fa-edit"></i></a>
+                    <!-- Card to display user's recipes -->
+                    <div class="row no-gutters text-center">
+                        {% for recipe in recipes %}
+                        {% if session.user|lower == recipe.created_by|lower %}
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 mx-2 mb-2">
+                                <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a
+                                            href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name.upper() }}</a>
+                                    </h5>
+                                    <p class="card-text"> {{ recipe.recipe_description }}</p>
+                                    <p><em>Created by: {{ recipe.created_by }}</em></p>
+                                </div>
+                                <div class="card-footer">
+                                <div class="row">
+                                    <!-- Edit Recipe button -->
+                                    <div class="col-lg-6 col-md-6 mb-2">
+                                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}"
+                                            class="btn btn-edit">
+                                            Edit <i class="fas fa-edit"></i></a>
+                                    </div>
+                                    <!-- Delete Recipe button -->
+                                    <div class="col-lg-6 col-md-6 mb-2">
+                                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                                            class="btn btn-delete">
+                                            Delete <i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Delete Recipe button -->
-                        <div class="col-lg-6 col-md-6 mb-2 mx-auto">
-                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn btn-delete">
-                                Delete <i class="fas fa-trash-alt"></i></a>
-                        </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            {% endif %}
-        {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
