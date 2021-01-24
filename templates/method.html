@@ -4,24 +4,31 @@
     <div class="container body-wrapper">
         <div class="row">
             <div class="col-md-5 mb-2">
-                <img src="{{ recipe.recipe_image }}" alt="Aloo Palak dish">
+                <!-- Recipe Image -->
+                <img src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
                 <br>
             </div>
+            <!-- Recipe name & description -->
             <div class="col-md-7">
                 <h2 class="page-headers">{{ recipe.recipe_name.upper() }}</h2>
                 <h5> {{ recipe.recipe_description }}</h5>
                 <br>
+                <!-- Recipe preptime & yield -->
                 <ul class="list-unstyled">
-                    <li><small><i class="fas fa-clock form-icon"></i><strong> Preparation Time: </strong>{{ recipe.recipe_preptime }}</small></li>
-                    <li><small><i class="fas fa-drumstick-bite form-icon"></i><strong> Yield: </strong> {{ recipe.recipe_servings }}</small></li>
+                    <li><small><i class="fas fa-clock form-icon"></i><strong> Preparation Time:
+                            </strong>{{ recipe.recipe_preptime }}</small></li>
+                    <li><small><i class="fas fa-drumstick-bite form-icon"></i><strong> Yield: </strong>
+                            {{ recipe.recipe_servings }}</small></li>
                 </ul>
                 <br>
+                <!-- Recipe ingredients -->
                 <h3 class="page-headers">Ingredients:</h3>
-                    <ul>
-                        <li>{{ recipe.recipe_ingredients }}</li>
-                    </ul>
+                <ul>
+                    <li>{{ recipe.recipe_ingredients }}</li>
+                </ul>
             </div>
         </div>
+        <!-- Recipe method -->
         <div class="row my-4">
             <div class="col-md-12">
                 <h3 class="page-headers">Method:</h3>

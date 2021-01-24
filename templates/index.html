@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
- <!-- Page Header -->
+    <!-- Page Header -->
     <header class="masthead"
         style="background-image: url('https://www.foodies.pk/wp-content/uploads/2019/09/Pakistani-Cuisine-Food.jpg')">
         <div class="overlay"></div>
@@ -22,23 +22,29 @@
     <!-- To retrieve recipes from db -->
     <div class="row no-gutters text-center">
         {% for recipe in recipes %}
-            <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
-                <div class="card h-100 mx-2">
-                    <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name.upper() }}</a></h5>
-                        <ul class="list-unstyled">
-                            <li><small><strong>Preptime: </strong>{{ recipe.recipe_preptime }}</small></li>
-                            <li><small><strong>Yield: </strong> {{ recipe.recipe_servings }}</small></li>
-                        </ul>
-                        <p class="card-text"> {{ recipe.recipe_description }}</p>
-                        <p><em>Created by: {{ recipe.created_by }}</em></p>
-                    </div>    
-                    <div class="card-footer">
-                        <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn btn-recipes">See Recipe</a>
-                    </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-3">
+            <!-- Recipe card blocks -->
+            <div class="card h-100 mx-2">
+                <img class="card-img-top" src="{{ recipe.recipe_image }}" alt="{{ recipe.recipe_name }}">
+                <div class="card-body">
+                    <!-- Recipe name with link to unique recipe page -->
+                    <h5 class="card-title"><a
+                            href="{{ url_for('recipe', recipe_id=recipe._id) }}">{{ recipe.recipe_name.upper() }}</a></h5>
+                    <ul class="list-unstyled">
+                        <!-- Recipe preptime & yield -->
+                        <li><small><strong>Preptime: </strong>{{ recipe.recipe_preptime }}</small></li>
+                        <li><small><strong>Yield: </strong> {{ recipe.recipe_servings }}</small></li>
+                    </ul>
+                    <!-- Recipe description -->
+                    <p class="card-text"> {{ recipe.recipe_description }}</p>
+                    <p><em>Created by: {{ recipe.created_by }}</em></p>
+                </div>
+                <!-- See Recipe button -->
+                <div class="card-footer">
+                    <a href="{{ url_for('recipe', recipe_id=recipe._id) }}" class="btn btn-recipes">See Recipe</a>
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
     <br>
@@ -46,6 +52,5 @@
         <h6><a href="{{ url_for('recipes') }}" class="cta-link">See All Recipes</a></h6>
     </div>
     <br>
-
 
 {% endblock %}

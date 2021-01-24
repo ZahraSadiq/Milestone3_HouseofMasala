@@ -21,6 +21,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Homepage
 @app.route("/")
 def index():
     # Retrieve last 3 recipes from db
@@ -92,6 +93,7 @@ def profile(username):
         {"username": session["user"]})["username"]
     recipe = mongo.db.recipes.find()
 
+    # if the user is in session display recipes
     if session:
         return render_template(
             "profile.html", username=username, recipes=recipe)
@@ -136,6 +138,7 @@ def addrecipe():
             "created_by": session["user"],
             "recipe_url": request.form.get("recipe_name")
         }
+        # Adds the recipe to the recipes page
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
         return redirect(url_for("recipes"))

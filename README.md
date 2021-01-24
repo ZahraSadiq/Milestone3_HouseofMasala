@@ -263,19 +263,19 @@ This site is hosted on GitHub Pages.
 ### 1. Code Snippets
 
 * The python code in this project is based on The Task Manger Mini project by Code institute.
-* The website is based on Clean Blog theme from Startup Bootstrap and mimics some of the interactive & design elements created for the theme.
+* The website is built with Clean Blog theme from Startup Bootstrap and mimics some of the interactive & design elements created for the theme.
 
 ### 2. Media
 
 * Icons from: [FontAwesome](https://fontawesome.com/icons?d=gallery)
 * [Banner image](https://www.foodies.pk/blog/introduction-to-pakistani-cuisine/) 
 * Recipe images were sourced from:
-   	* [Chicken Karahi Keema](https://fatimacooks.net/recipe/chicken-karahi-keema/)
-* [Prawn Pilau](https://www.ruchikrandhap.com/wp-content/uploads/2017/08/Prawn-Pulao-1-1024x683.jpg) 
-* [Kheer](https://www.whiskaffair.com/wp-content/uploads/2019/04/Rice-Kheer-2-3.jpg) 
-* [Bhunni Mash Daal]https://kfoods.com/images1/newrecipeicon/bhuni-daal-mash_12184.jpg) 
-* [Mutton Pilau](https://fatimacooks.net/mutton-pulao-recipe-yakhni-pilau-rice/)
-* [Aloo Palak](https://i2.wp.com/spicepaw.com/wp-content/uploads/2020/01/Aloo-Palak-1.jpg?fit=3124%2C3129&ssl=1) 
+    * [Chicken Karahi Keema](https://fatimacooks.net/recipe/chicken-karahi-keema/)
+    * [Prawn Pilau](https://www.ruchikrandhap.com/wp-content/uploads/2017/08/Prawn-Pulao-1-1024x683.jpg) 
+    * [Kheer](https://www.whiskaffair.com/wp-content/uploads/2019/04/Rice-Kheer-2-3.jpg) 
+    * [Bhunni Mash Daal](https://kfoods.com/images1/newrecipeicon/bhuni-daal-mash_12184.jpg) 
+    * [Mutton Pilau](https://fatimacooks.net/mutton-pulao-recipe-yakhni-pilau-rice/)
+    * [Aloo Palak](https://i2.wp.com/spicepaw.com/wp-content/uploads/2020/01/Aloo-Palak-1.jpg?fit=3124%2C3129&ssl=1) 
 
 ### 3. Content
 

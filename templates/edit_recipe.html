@@ -13,14 +13,14 @@
                     <i class="fas fa-edit form-icon"></i>
                     <label for="recipe_name" class="form-label"><strong>Recipe Name</strong></label>
                     <input type="text" class="form-control" id="recipe_name" name="recipe_name"
-                    value="{{ recipe.recipe_name }}" minlength="5" maxlength="50" required>
+                        value="{{ recipe.recipe_name }}" minlength="5" maxlength="50" required>
                 </div>
-            <!-- Recipe Image URL -->
+                <!-- Recipe Image URL -->
                 <div class="col-6">
                     <i class="fas fa-file-image form-icon"></i>
                     <label for="recipe_image" class="form-label"><strong>Image URL</strong></label>
                     <input type="url" class="form-control" id="recipe_image" name="recipe_image"
-                    value="{{ recipe.recipe_image }}" required>
+                        value="{{ recipe.recipe_image }}" required>
                 </div>
             </div>
             <!-- Recipe Description -->
@@ -28,8 +28,8 @@
                 <div class="col">
                     <i class="fas fa-align-left form-icon"></i>
                     <label for="recipe_decription"><strong>Recipe Description</strong></label>
-                    <textarea class="form-control" id="recipe_decription" name="recipe_description"
-                    rows="2" minlength="5" maxlength="250" required>
+                    <textarea class="form-control" id="recipe_decription" name="recipe_description" rows="2"
+                        minlength="5" maxlength="250" required>
                 {{- recipe.recipe_description -}}
                 </textarea>
                 </div>
@@ -40,14 +40,14 @@
                     <i class="fas fa-clock form-icon"></i>
                     <label for="recipe_preptime" class="form-label"><strong>Preparation Time</strong></label>
                     <input type="text" class="form-control" id="recipe_preptime" name="recipe_preptime"
-                    value="{{ recipe.recipe_preptime }}" minlength="5" maxlength="50" required>
+                        value="{{ recipe.recipe_preptime }}" minlength="5" maxlength="50" required>
                 </div>
-            <!-- Recipe Yield -->
+                <!-- Recipe Yield -->
                 <div class="col-6">
                     <i class="fas fa-drumstick-bite form-icon"></i>
                     <label for="recipe_servings" class="form-label"><strong>Number of Servings</strong></label>
                     <input type="text" class="form-control" id="recipe_servings" name="recipe_servings"
-                    value="{{ recipe.recipe_servings }}" minlength="1" maxlength="50" required>
+                        value="{{ recipe.recipe_servings }}" minlength="1" maxlength="50" required>
                 </div>
             </div>
             <!-- Ingredients List -->
@@ -56,7 +56,7 @@
                     <i class="fas fa-list-ul form-icon"></i>
                     <label for="recipe_ingredients" class="form-label"><strong>Ingredients</strong></label>
                     <textarea type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients"
-                    minlength="5" required>
+                        minlength="5" required>
                 {{- recipe.recipe_ingredients -}}
                 </textarea>
                 </div>
@@ -67,7 +67,7 @@
                     <i class="fas fa-mortar-pestle form-icon"></i>
                     <label for="recipe_step1" class="form-label"><strong>Step 1</strong></label>
                     <input type="text" class="form-control" id="recipe_step1" name="recipe_step1"
-                    value="{{ recipe.recipe_step1 }}" minlength="5" required>
+                        value="{{ recipe.recipe_step1 }}" minlength="5" required>
                 </div>
             </div>
             <!-- Method - Step 2 -->
@@ -76,7 +76,7 @@
                     <i class="fas fa-mortar-pestle form-icon"></i>
                     <label for="recipe_step2" class="form-label"><strong>Step 2</strong></label>
                     <input type="text" class="form-control" id="recipe_step2" name="recipe_step2"
-                    value="{{ recipe.recipe_step2 }}" minlength="5" required>
+                        value="{{ recipe.recipe_step2 }}" minlength="5" required>
                 </div>
             </div>
             <!-- Method - Step 3 -->
@@ -85,7 +85,7 @@
                     <i class="fas fa-mortar-pestle form-icon"></i>
                     <label for="recipe_step3" class="form-label"><strong>Step 3</strong></label>
                     <input type="text" class="form-control" id="recipe_step3" name="recipe_step3"
-                    value="{{ recipe.recipe_step3}}" minlength="5" >
+                        value="{{ recipe.recipe_step3}}" minlength="5">
                 </div>
             </div>
             <div class="row">
