@@ -165,38 +165,45 @@ This website is saved in a repository on GitHub.
 ### A. First-Time Visitor Goals:
 
 * As a First Time Visitor, I want to easily understand the main purpose of the site and who the company is.
-   * Upon entering the site, users are presented with a bright, catchy and easily readable banner image, which introduces the Company name and purpose of the site. Underneath, a introductory text follows with more context about occasions people can select from & CTA to click one of the selections below.
-   * In the footer, a short about us blurb gives the user further details about the company.
-
-* As a First Time Visitor, I want to be able to easily navigate through the site to find content most relevant to me.
-   * The website is designed to be very clean and straight to the point. The goal being to allow users to find the spot that most fits their occasion, without being distracted by irrelevant content.
-
-* As a First Time Visitor, I want to be able to gather key information about each recommended location to be able to make an informed decision.
-   * After selecting a marker on the map, users are presented with a very descriptive infoWindow, displaying information about the bar or restaurant, the address, and opening times. An image adds a nice visual of either the food or atmosphere of each spot.
-
-* As a First Time Visitor, I want to be able to know where the restaurant/bar recommended to me is located.
-   * Each recommended location populates the interactive Google Maps, allowing the user to see on the map where it is located.
-   * When the user clicks on a marker, they can also see the address of the place on the infoWindow.
-
-* As a First Time Visitor, I want to be able to filter the information most interesting to me.
-   * When a user clicks on a specific button, it will filter the map markers based on the occasion type. For example, if a user is looking for places to go to on their own - he/she clicks "Alone Again, Naturally" and is shown recommended locations perfect for going to alone.
-   * If a user wants to see all locations again, they have the option to click "All Locations" and the map will be repopulated with all the markers.
-
+    * Upon entering the site, users are presented with a bright, catchy and easily readable banner image, which introduces the Company name and purpose of the site. 
+    * In the footer, a short about us blurb gives the user further details about the company & its mission.
+* As a First Time Visitor, I want to be able to easily navigate throughout the site to find content most relevant to me.
+    * The website is designed to be very clean and straight to the point. The navigation bar enables the user to visit different pages on the website with ease. CTA buttons also link to relevant content, pages & functions.
+* As a First Time Visitor, I want to be able to register my profile.
+	* The user is able to register via the navigation bar. If they accidentally click on Login, a link at the bottom of the form also redirects the user to the register page.
+* As a First Time Visitor, I want to be able to gather key information about each recipe to be able to create the desired recipe at home.
+	* All recipe cards contain a button leading the recipe page, where the recipe is presented to the user in great detail.
+* As a First Time Visitor, I want to be able to add a new recipe with ease.
+	* Once the user registers their profile, they are able to navigate to the Add a Recipe page via the navigation bar. 
+* As a First Time Visitor, I want to be able to access, edit or delete my created recipe.
+	* Once the user has registered & created a recipe, they are able to view the recipes they added on their profile page (accessible via the navbar). Each recipe card created by them, includes an edit & delete button allowing them to update the recipe or delete it. 
 * As a First Time Visitor, I want to be able to visit their social media pages to determine how big a following the company has & how trusted it is.
-   * In the footer, social media icons lead to the company's social media pages, as well as Tripadvisor.
+    * In the footer, social media icons lead to the company's social media pages.
 
 ### B. Returning Visitor Goals
 
-* As a Returning Visitor, I want to be able to get a variety of options available for the occasion I select.
-   * Each occasion is linked to 5 different recommended locations. In total, the map is populated with 30 different spots, giving the user a lot of variety to choose from.
-
-* As a Returning Visitor, I want to find the best way to get in touch with the company with any questions or suggestions I may have.
-   * In the footer, the user can find the email address of the company to get in touch with suggestions or questions.
+* As a Returning Visitor, I want to be able to log in to my profile with the credentials that were registered.
+    * Users can login easily via the navigation bar with their credentials. 
+* As a Returning Visitor, I want to be able to log out of my profile.
+	* Once in session, users can log out of the website via a link in the navbar. This will lead back to the login form in case they want to log back in.
+* As a Returning Visitor, I want to be able to get a variety of new recipe options.
+	* Via the homepage, the section “Recently Added Recipes” allows the user to quickly see if new recipes have been added since the last time they visited the website. 
+	* The user can also check “All Recipes” page to see all the recipes. 
+* As a Returning Visitor, I want to be able to see and access my added recipes.
+	* Once in session, the user can visit their profile page, via the navbar, to see and access their own created recipes.
+* As a Returning Visitor, I want to be able to access my profile.
+	* Once in session, the user can access their profile via the top navbar.
+* As a Returning Visitor, I want to be able to edit or delete my added recipes.
+	* Once the user has logged in, they are able to view the recipes they added on their profile page (accessible via the navbar). Each recipe card created by them, includes an edit & delete button allowing them to update the recipe or delete it. 
+* As a Returning Visitor, I want to be able to to get in touch with the company with any questions or suggestions I may have.
+    * In the footer, the user can find the email address of the company to get in touch with suggestions or questions.
 
 ### C. Frequent Visitor Goals
 
-* As a Frequent Visitor, I want to check to see if there are any newly added recommended locations that I can check out.
-   * At this point the user is familiar with the layout of the website & can recognize new locations or occasions that have been added to the map.
+* As a Frequent Visitor, I want to check to see if there are any newly added recipes that have been created on the website that I can cook. 
+    * At this point the user is familiar with the layout of the website & can recognize new recipes that have been added.
+* As a Frequent Visitor, I want to be able to log in & log out of my profile with ease. 
+	* The user is also familiar with the placement of the login and logout buttons located in the top navbar. 
 
 ### 3. Further Testing
 
@@ -262,7 +269,7 @@ This site is hosted on GitHub Pages.
 
 ### 1. Code Snippets
 
-* The python code in this project is based on The Task Manger Mini project by Code institute.
+* The python code in this project is based on The Task Manager Mini project by Code institute.
 * The website is built with Clean Blog theme from Startup Bootstrap and mimics some of the interactive & design elements created for the theme.
 
 ### 2. Media
@@ -280,12 +287,12 @@ This site is hosted on GitHub Pages.
 ### 3. Content
 
 * Recipes for the following were sourced from:
-* [Chicken Karahi Keema](https://fatimacooks.net/recipe/chicken-karahi-keema/)
-* [Prawn Pilau](https://fatimacooks.net/recipe/prawn-pilau-biryani-rice/)
-* [Kheer](https://fatimacooks.net/recipe/cardamom-kheer/)
-* [Bhunni Mash Daal](https://fatimacooks.net/bhuni-mash-daal/)
-* [Mutton Pilau](https://fatimacooks.net/mutton-pulao-recipe-yakhni-pilau-rice/)
-* [Aloo Palak](https://fatimacooks.net/aloo-palak-recipe-spinach-potato-curry/) 
+    * [Chicken Karahi Keema](https://fatimacooks.net/recipe/chicken-karahi-keema/)
+    * [Prawn Pilau](https://fatimacooks.net/recipe/prawn-pilau-biryani-rice/)
+    * [Kheer](https://fatimacooks.net/recipe/cardamom-kheer/)
+    * [Bhunni Mash Daal](https://fatimacooks.net/bhuni-mash-daal/)
+    * [Mutton Pilau](https://fatimacooks.net/mutton-pulao-recipe-yakhni-pilau-rice/)
+    * [Aloo Palak](https://fatimacooks.net/aloo-palak-recipe-spinach-potato-curry/) 
   
 ### 4. Acknowledgements
 
