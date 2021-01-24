@@ -6,6 +6,16 @@
     color: #29580a;
 }
 
+.cta-link {
+    color: #212529;
+    text-decoration: underline;
+}
+
+.cta-link:hover {
+    color: #4CAF50;
+}
+
+
 /* Recipes buttons */
 .btn {
   font-size: 14px;

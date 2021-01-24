@@ -23,7 +23,9 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    recipe = mongo.db.recipes.find().sort("<recipe_id>", 1).limit(3)
+    return render_template(
+        "index.html", page_title="Recently Added Recipes", recipes=recipe)
 
 
 # Register
