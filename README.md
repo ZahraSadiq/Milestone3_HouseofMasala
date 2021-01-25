@@ -67,8 +67,7 @@ I opted for a clean and fresh look & feel for this website. The background is ke
 
 ### Wireframes & Mockups:
 
-* View website wireframes for desktop [here](https://drive.google.com/file/d/15ZmioN0w8vPz3TuhpdIQcyuUIX5oD5v9/view?usp=sharing)
-* View website wireframes for mobile [here](https://drive.google.com/file/d/1Svbf2IyMygzqkQPFNg-TqXWZ9xfA7PxV/view?usp=sharing) 
+* View website wireframes for desktop & mobile [here](https://drive.google.com/file/d/1I_eR45ittdz8OyTWI3xFV8nl4pDpnovN/view?usp=sharing)
  
 ---
 
@@ -273,8 +272,8 @@ Forking the GitHub Repository creates a copy of the original repository in our G
    * Both the deployed and developed versions of this website are identical.
 
 This site is hosted on Heroku.
-* You can view the live site [here](http://house-of-masala.herokuapp.com/)
-* The url for the site is: http://house-of-masala.herokuapp.com/
+* You can view the live site [here](https://house-of-masala.herokuapp.com/)
+* The url for the site is: https://house-of-masala.herokuapp.com/
 
 ---
 <span id="credits"></span>
