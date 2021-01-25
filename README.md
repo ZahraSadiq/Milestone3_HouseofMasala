@@ -152,9 +152,9 @@ This website is saved in a repository on GitHub.
 ### 1. Testing Tools
 
 * [The W3C Markup Validation Service](https://validator.w3.org/) - for testing my HTML code
-   * Result: No errors
+   * Result: No errors 
 * [The W3C CSS Validation Service: W3 Jigsaw](https://jigsaw.w3.org/css-validator/) - for testing my CSS code
-   * Result: "Congratulations! No Error Found."
+   * Result: No errors
 * Chrome Dev Tools - for testing:
    * Mobile responsiveness
    * CSS styling changes before implementing it in the code
@@ -211,7 +211,9 @@ This website has been tested by friends and family to check for:
 * bugs or disabled links
 * clear user experience & navigation
 * picture loading speed
-* map functionality
+* login/register/logout functionalities
+* edit, add, delete recipe functionalities
+* correct flash message displays
 
 ### 4. Browser & Device Testing
 
@@ -236,16 +238,27 @@ During the development stage, I encountered an issue with my gitignore file, whi
 <span id="deployment"></span>
 ## Deployment :rocket:
 
-### Github Pages
+### Deployment to Heroku
 
-The project was deployed to GitHub Pages by following the steps below:
-
-1. Log in to GitHub and locate the GitHub Repository
-2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
-4. Under "Source", click the dropdown option called "None" and select "Master Branch".
-5. The page will automatically refresh.
-6. Scroll to GitHub pages section to locate the now published site link.
+This project was deployed to Heroku by following the steps below:
+1. Create a requirements.txt by typing in the terminal command line: pip3 freeze --local > requirements.txt
+2. Create a Procfile by typing in the terminal command line with: echo web: python app.py > Procfile.
+3. Remove the trailing whitespace in the Procfile.
+4. Type in the commands in the terminal: git add -A, Git commit -m "Your message" & Git push to push these changes into GitHub.
+5. Navigate to the [Heroku website](https://dashboard.heroku.com/apps)
+6. Create a new app by selecting the button labelled “New” on the dashboard and give the app a unique name.
+7. Select the region you're situated in.
+7. In the Deploy tab, select Github. Make sure you're connected to the right account.
+8. Type in the name of the repository you wish to connect to 
+9. In the Settings tab, click on Reveal Config Vars and set as below:
+    * IP = 0.0.0.0
+    * MONGO_DBNAME = [name of your MongoDB]
+    * PORT = 5000
+    * MONGO_URI = unique link to your Mongo database
+    * and finally your SECRET_KEY.
+10. Once added, click "Hide Config Vars"
+11. Navigate to the Deploy tab and select Enable Automatic Deploys.
+12. At the bottom of the page, click on Deploy Branch, ensuring the master branch is selected.
 
 ### Forking the GitHub Repository
 Forking the GitHub Repository creates a copy of the original repository in our GitHub account to view and/or make changes without affecting the original repository. This can be done through the following steps:
@@ -259,9 +272,9 @@ Forking the GitHub Repository creates a copy of the original repository in our G
    * It was developed on GitPod, with changes regularly pushed to GitHub's repository using one main master branch.
    * Both the deployed and developed versions of this website are identical.
 
-This site is hosted on GitHub Pages.
-* You can view the live site [here](https://zahrasadiq.github.io/Milestone2-AntwerpHotSpots/)
-* The url for the site is: https://zahrasadiq.github.io/Milestone2-AntwerpHotSpots/
+This site is hosted on Heroku.
+* You can view the live site [here](http://house-of-masala.herokuapp.com/)
+* The url for the site is: http://house-of-masala.herokuapp.com/
 
 ---
 <span id="credits"></span>
